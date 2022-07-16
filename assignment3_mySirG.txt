@@ -1,0 +1,392 @@
+NAME-UDIT KHANDELWAL											ASSIGNMENT-3
+1. Write a program to check whether a given number is positive or non-positive.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a no.:");
+    scanf("%d",&n);
+    if(n>0){
+        printf("number is positive.");
+    }
+    else if(n<0){
+        printf("number is negative");
+    }
+    else{
+        printf("number is zero");
+    }
+    getch();
+}
+
+2. Write a program to check whether a given number is divisible by 5 or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a no.:");
+    scanf("%d",&n);
+    if(n%5==0){
+        printf("number is divisible by 5");
+    }
+    else{
+        printf("number is not divisible by 5");
+    }
+    getch();
+}
+
+3. Write a program to check whether a given number is an even number or an odd
+number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a no.:");
+    scanf("%d",&n);
+    if(n%2==0){
+        printf("number is even");
+    }
+    else{
+        printf("number is odd");
+    }
+    getch();
+}
+
+4. Write a program to check whether a given number is an even number or an odd
+number without using % operator.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a no.:");
+    scanf("%d",&n);
+    if((n&1)==0){
+        printf("number is even");
+    }
+    else{
+        printf("number is odd");
+    }
+    getch();
+}
+
+5. Write a program to check whether a given number is a three-digit number or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a no.:");
+    scanf("%d",&n);
+    if(((n>=100)&&(n<=999))||((n>=-999)&&(n<=-100))){
+        printf("number is three digit no.");
+    }
+    else{
+        printf("number is not a three digit no.");
+    }
+    getch();
+}
+
+6. Write a program to print greater between two numbers. Print one number of both are
+the same.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,b;
+    printf("enter first no.:");
+    scanf("%d",&a);
+    printf("enter second no.:");
+    scanf("%d",&b);
+    if(a>b){
+        printf("greater number is:%d",a);
+    }
+    else if(b>a){
+        printf("greater number is:%d",b);
+    }
+    else{
+        printf("both numbers are equal and number is:%d",a);
+    }
+    getch();
+}
+
+7. Write a program to check whether roots of a given quadratic equation are real &
+distinct, real & equal or imaginary roots.
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+    double a,b,c,r1,r2,D,real_part,imag_part;
+    printf("enter values of a,b and c:");
+    scanf("%lf,%lf,%lf",&a,&b,&c);
+    D=(b*b)-(4*a*c);
+    if(D>0){
+        printf("Roots are real and distinct\n");
+        r1=(((-b)+(sqrt(D)))/(2*a));
+        r2=(((-b)-(sqrt(D)))/(2*a));
+        printf("Roots are:%lf and %lf",r1,r2);
+    }
+    else if(D==0){
+        printf("Roots are real and equal\n");
+        r1=r2=(-b/(2*a));
+        printf("Roots are:%lf and %lf",r1,r2);
+    }
+    else if(D<0){
+        printf("Roots are imaginary\n");
+        real_part=(-b)/(2*a);
+        imag_part=sqrt(-D)/(2*a);
+        printf("roots are:%lf+i%lf and %lf-i%lf",real_part,imag_part,real_part,imag_part);
+    }
+    getch();
+}
+
+8. Write a program to check whether a given year is a leap year or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int year;
+    printf("enter year:");
+    scanf("%d",&year);
+    if(year%100==0){
+        if(year%400==0){
+            printf("%d is a leap year",year);
+        }
+        else{
+            printf("%d is not leap year",year);
+        }
+    }
+    else{
+        if(year%4==0){
+            printf("%d is a leap year",year);
+        }
+        else{
+            printf("%d is not a leap year",year);
+        }
+    }
+    getch();
+}
+
+
+9. Write a program to find the greatest among three given numbers. Print number once
+if the greatest number appears two or three times.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,b,c;
+    printf("enter three numbers:");
+    scanf("%d %d %d",&a,&b,&c);
+    if(a>=b&&a>=c){
+        printf("%d is the greatest number",a);
+    }
+    else if(b>=a&&b>=c){
+        printf("%d is the greatest number",b);
+    }
+    else{
+        printf("%d is the greatest number",c);
+    }
+    getch();
+}
+
+10. Write a program which takes the cost price and selling price of a product from the
+user. Now calculate and print profit or loss percentage.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    float cost,sell,profit,loss;
+    printf("enter cost price of product:");
+    scanf("%f",&cost);
+    printf("enter selling price of product:");
+    scanf("%f",&sell);
+    if(cost>sell){
+        loss=((cost-sell)/cost)*100;
+        printf("loss percentage is:%.2f%%",loss);
+    }
+    else{
+        profit=((sell-cost)/cost)*100;
+        printf("profit percentage is:%.2f%%",profit);
+    }
+    getch();
+}
+
+11. Write a program to take marks of 5 subjects from the user. Assume marks are given
+out of 100 and passing marks is 33. Now display whether the candidate passed the
+examination or failed.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int m1,m2,m3,m4,m5;
+    printf("enter marks of 5 subjects:");
+    scanf("%d %d %d %d %d",&m1,&m2,&m3,&m4,&m5);
+    if(m1>=33&&m2>=33&&m3>=33&&m4>=33&&m5>=33){
+        printf("candidate has passed the examination");
+    }
+    else{
+        printf("candidate has failed the examination");
+    }
+    getch();
+}
+
+12. Write a program to check whether a given alphabet is in uppercase or lowercase.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    char ch;
+    printf("enter a character:");
+    scanf("%c",&ch);
+    if(ch>='a'&&ch<='z'){
+        printf("character is in lowercase alphabet");
+    }
+    else if(ch>='A'&&ch<='Z'){
+        printf("character is in uppercase alphabet");
+    }
+    else{
+        printf("character is not in upper and lower case alphabet");
+    }
+    getch();
+}
+
+13. Write a program to check whether a given number is divisible by 3 and divisible by 2.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    if((n%2==0)&&(n%3==0)){
+        printf("number is divisible by 2 and 3");
+    }
+    else{
+        printf("number is not divisible by 2 and 3");
+    }
+    getch();
+}
+
+14. Write a program to check whether a given number is divisible by 7 or divisible by 3.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    if((n%3==0)&&(n%7==0)){
+        printf("number is divisible by 3 and 7");
+    }
+    else{
+        printf("number is not divisible by 3 and 7");
+    }
+    getch();
+}
+
+15. Write a program to check whether a given number is positive, negative or zero.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int n;
+    printf("enter a number:");
+    scanf("%d",&n);
+    if(n>0){
+        printf("number is positive");
+    }
+    else if(n<0){
+        printf("number is negative");
+    }
+    else{
+        printf("number is zero");
+    }
+    getch();
+}
+
+16. Write a program to check whether a given character is an alphabet (uppercase), an
+alphabet (lower case), a digit or a special character.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    char ch;
+    printf("enter a character:");
+    scanf("%c",&ch);
+    if(ch>='a'&&ch<='z'){
+        printf("character is lowercase");
+    }
+    else if(ch>='A'&&ch<='Z'){
+        printf("character is uppercase");
+    }
+    else if(ch>='0'&&ch<='9'){
+        printf("character is digit");
+    }
+    else{
+        printf("character is special character");
+    }
+    getch();
+}
+
+17. Write a program which takes the length of the sides of a triangle as an input. Display
+whether the triangle is valid or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int s1,s2,s3;
+    printf("enter length of three sides:");
+    scanf("%d %d %d",&s1,&s2,&s3);
+    if((s1+s2>s3)&&(s1+s3>s2)&&(s2=s3>s1)){
+        printf("triangle is valid");
+    }
+    else{
+        printf("triangle is not valid");
+    }
+    getch();
+}
+
+18. Write a program which takes the month number as an input and display number of
+days in that month.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int month_num,num_of_days;
+    printf("enter month number:");
+    scanf("%d",&month_num);
+    if(month_num==4||month_num==6||month_num==9||month_num==11){
+        num_of_days=30;
+        printf("number of days in month is:%d",num_of_days);
+    }
+    else if(month_num==2){
+        num_of_days=28;
+        printf("number of days in month is:%d",num_of_days);
+    }
+    else{
+        num_of_days=31;
+        printf("number of days in month is:%d",num_of_days);
+    }
+    getch();
+}
